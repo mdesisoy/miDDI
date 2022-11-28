@@ -9,6 +9,7 @@
     <br/>
 		<a href="champions/championsList.jsp">Listado Campeones</a>
 		<a href="abilities/abilitiesList.jsp">Listado Habilidades</a>
+		<a href="stats/statsList.jsp">Listado de Stats</a>
 	<br/>
 </body>
 </html>
