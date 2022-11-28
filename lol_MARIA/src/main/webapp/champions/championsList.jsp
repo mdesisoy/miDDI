@@ -50,6 +50,7 @@
         <th scope="col">tittle</th>
         <th scope="col">lore</th>
         <th scope="col">tags</th>
+        <th scope="col">abilities</th>
       </tr>
     </thead>
     <tbody>
@@ -60,6 +61,16 @@
                 <td>${c.getTitle()}</td>
                 <td>${c.getLore()}</td>
                 <td>${c.getTags()}</td>
+                <td>
+                    <form action="/abilitiesList" method="post">
+                        <input type="hidden" name="id" value="${c.id}"/>
+                        <input type="hidden" name="champion_name" value="${c.champion_name}"/>
+                        <input type="hidden" name="title" value="${c.title}"/>
+                        <input type="hidden" name="lore" value="${c.lore}"/>
+                        <input type="hidden" name="tags" value="${c.tags}"/>
+                        <input type="submit" value="Habilidades Campeón">
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </tbody>

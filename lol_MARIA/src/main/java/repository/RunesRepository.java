@@ -58,4 +58,22 @@ public class RunesRepository {
             manager.close(conn);
         }
     }
+
+    //intento de buscador
+    public void search(String r) {
+		Connection conn = manager.open();
+		PreparedStatement statement = null;
+		try {
+			statement = conn.prepareStatement("SELECT * FROM runes WHERE rune_name LIKE ?");
+            statement.setString(1, "%" + r + "%");
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(statement);
+			manager.close(conn);
+		}
+
+	}
 }
